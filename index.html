@@ -5,7 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AleStore Projects</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
 </head>
 <body>
 
@@ -48,7 +54,7 @@
 
   <footer>
     <p>© 2025 AleStore • All projects are released under the AGPL v3 license.</p>
-    <p>For information, write to: alestore.delegate549@passinbox.com</p>
+    <p>For inquiries, contact: alestore.delegate549@passinbox.com</p>
     <p><a href="https://github.com/AleStore-Official" target="_blank">GitHub Profile</a></p>
   </footer>
 </body>
