@@ -1,7 +1,7 @@
 {
   "name": "AleStore Projects",
   "short_name": "AleStore",
-  "start_url": "/Info/",
+  "start_url": "/AleInfo/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
