@@ -1,61 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AleStore Projects</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="manifest" href="manifest.json">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js');
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #d0f0ff, #fbeaff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
-  </script>
+
+    .container {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 700px;
+      width: 90%;
+      box-shadow:
+        0 4px 30px rgba(0, 0, 0, 0.1),
+        inset 0 0 0.5px rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    header, footer {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 28px;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .project {
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .project h2 {
+      margin-bottom: 10px;
+      color: #007bff;
+    }
+
+    .project p {
+      margin: 5px 0;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <header>
+      <h1>AleStore GitHub Projects</h1>
+      <p>Welcome! Here you’ll find an overview of my open-source projects published on GitHub Pages.</p>
+    </header>
 
-  <header>
-    <h1>AleStore GitHub Projects</h1>
-    <p>Welcome! Here you’ll find an overview of my open-source projects published on GitHub Pages.</p>
-  </header>
+    <main>
+      <section class="project">
+        <h2>AleCrypt</h2>
+        <p>A simple tool for encrypting and decrypting messages directly in the browser.</p>
+        <p><strong>Link:</strong> <a href="https://alestore-official.github.io/AleCrypt/" target="_blank">Visit AleCrypt</a></p>
+        <p><strong>Repository:</strong> <a href="https://github.com/AleStore-Official/AleCrypt" target="_blank">GitHub</a></p>
+      </section>
 
-  <main>
-    <section class="project">
-      <h2>AleCrypt</h2>
-      <p><strong>Link:</strong> <a href="https://alestore-official.github.io/AleCrypt/" target="_blank">Visit AleCrypt</a></p>
-      <p><strong>Repository:</strong> <a href="https://github.com/AleStore-Official/AleCrypt" target="_blank">GitHub</a></p>
-    </section>
+      <section class="project">
+        <h2>AleCassier</h2>
+        <p>A lightweight cashier interface for managing transactions and receipts.</p>
+        <p><strong>Link:</strong> <a href="https://alestore-official.github.io/AleCassier/" target="_blank">Visit AleCassier</a></p>
+        <p><strong>Repository:</strong> <a href="https://github.com/AleStore-Official/AleCassier" target="_blank">GitHub</a></p>
+      </section>
 
-    <section class="project">
-      <h2>AleCassier</h2>
-      <p><strong>Link:</strong> <a href="https://alestore-official.github.io/AleCassier/" target="_blank">Visit AleCassier</a></p>
-      <p><strong>Repository:</strong> <a href="https://github.com/AleStore-Official/AleCassier" target="_blank">GitHub</a></p>
-    </section>
+      <section class="project">
+        <h2>AlePortal</h2>
+        <p>A customizable landing page for accessing AleStore services and tools.</p>
+        <p><strong>Link:</strong> <a href="https://alestore-official.github.io/AlePortal/" target="_blank">Visit AlePortal</a></p>
+        <p><strong>Repository:</strong> <a href="https://github.com/AleStore-Official/AlePortal" target="_blank">GitHub</a></p>
+      </section>
 
-    <section class="project">
-      <h2>AlePortal</h2>
-      <p><strong>Link:</strong> <a href="https://alestore-official.github.io/AlePortal/" target="_blank">Visit AlePortal</a></p>
-      <p><strong>Repository:</strong> <a href="https://github.com/AleStore-Official/AlePortal" target="_blank">GitHub</a></p>
-    </section>
+      <section class="project">
+        <h2>AleStore</h2>
+        <p>The main e-commerce interface for AleStore, including login, registration, and product pages.</p>
+        <p><strong>Link:</strong> <a href="https://alestore-official.github.io/AleStore/" target="_blank">Visit AleStore</a></p>
+        <p><strong>Repository:</strong> <a href="https://github.com/AleStore-Official/AleStore" target="_blank">GitHub</a></p>
+      </section>
 
-    <section class="project">
-      <h2>AleStore</h2>
-      <p><strong>Link:</strong> <a href="https://alestore-official.github.io/AleStore/" target="_blank">Visit AleStore</a></p>
-      <p><strong>Repository:</strong> <a href="https://github.com/AleStore-Official/AleStore" target="_blank">GitHub</a></p>
-    </section>
+      <section class="project">
+        <h2>AleDJ</h2>
+        <p>A fun web-based DJ console for mixing tracks and sound effects.</p>
+        <p><strong>Link:</strong> <a href="https://alestore-official.github.io/AleDJ/" target="_blank">Visit AleDJ</a></p>
+        <p><strong>Repository:</strong> <a href="https://github.com/AleStore-Official/AleDJ" target="_blank">GitHub</a></p>
+      </section>
+    </main>
 
-    <section class="project">
-      <h2>AleDJ</h2>
-      <p><strong>Link:</strong> <a href="https://alestore-official.github.io/AleDJ/" target="_blank">Visit AleDJ</a></p>
-      <p><strong>Repository:</strong> <a href="https://github.com/AleStore-Official/AleDJ" target="_blank">GitHub</a></p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 AleStore • All projects are released under the AGPL v3 license.</p>
-    <p>For inquiries, contact: alestore.delegate549@passinbox.com</p>
-    <p><a href="https://github.com/AleStore-Official" target="_blank">GitHub Profile</a></p>
-  </footer>
+    <footer>
+      <p>© 2025 AleStore • All projects are released under the AGPL v3 license.</p>
+      <p>For inquiries, contact: alestore.delegate549@passinbox.com</p>
+      <p><a href="https://github.com/AleStore-Official" target="_blank">GitHub Profile</a></p>
+    </footer>
+  </div>
 </body>
 </html>
