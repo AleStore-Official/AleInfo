@@ -8,22 +8,36 @@
   <style>
     body {
       margin: 0;
-      padding: 0;
+      padding: 40px 0;
       font-family: 'Inter', sans-serif;
       background: linear-gradient(135deg, #d0f0ff, #fbeaff);
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      min-height: 100vh;
     }
 
-    .container {
+    h1 {
+      font-size: 28px;
+      color: #222;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 16px;
+      color: #555;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .project-box {
       background: rgba(255, 255, 255, 0.12);
       border: 1px solid rgba(255, 255, 255, 0.25);
       border-radius: 20px;
-      padding: 40px;
-      max-width: 700px;
+      padding: 30px;
       width: 90%;
+      max-width: 600px;
+      margin-bottom: 30px;
       box-shadow:
         0 4px 30px rgba(0, 0, 0, 0.1),
         inset 0 0 0.5px rgba(255, 255, 255, 0.4);
@@ -33,37 +47,35 @@
       text-align: center;
     }
 
-    header, footer {
-      margin-bottom: 30px;
-    }
-
-    h1 {
-      font-size: 28px;
-      color: #222;
+    .project-box h2 {
+      color: #007bff;
       margin-bottom: 10px;
     }
 
-    p {
-      font-size: 16px;
-      color: #555;
-    }
-
-    .project {
-      margin-bottom: 20px;
-    }
-
-    .project h2 {
-      margin-bottom: 8px;
-      color: #007bff;
-    }
-
-    a {
+    .project-box a {
       color: #007bff;
       text-decoration: none;
       font-weight: 500;
+      margin: 0 10px;
     }
 
-    a:hover {
+    .project-box a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    footer a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
       text-decoration: underline;
     }
 
@@ -80,43 +92,42 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>AleStore GitHub Projects</h1>
-      <p>Welcome! Here you’ll find links to my GitHub Pages and repositories.</p>
-    </header>
+  <h1>AleStore GitHub Projects</h1>
+  <p>Welcome! Here you’ll find links to my GitHub Pages and repositories.</p>
 
-    <main>
-      <section class="project">
-        <h2>AleCrypt</h2>
-        <p><a href="https://alestore-official.github.io/AleCrypt/" target="_blank">Visit AleCrypt</a> • <a href="https://github.com/AleStore-Official/AleCrypt" target="_blank">GitHub</a></p>
-      </section>
-
-      <section class="project">
-        <h2>AleCassier</h2>
-        <p><a href="https://alestore-official.github.io/AleCassier/" target="_blank">Visit AleCassier</a> • <a href="https://github.com/AleStore-Official/AleCassier" target="_blank">GitHub</a></p>
-      </section>
-
-      <section class="project">
-        <h2>AlePortal</h2>
-        <p><a href="https://alestore-official.github.io/AlePortal/" target="_blank">Visit AlePortal</a> • <a href="https://github.com/AleStore-Official/AlePortal" target="_blank">GitHub</a></p>
-      </section>
-
-      <section class="project">
-        <h2>AleStore</h2>
-        <p><a href="https://alestore-official.github.io/AleStore/" target="_blank">Visit AleStore</a> • <a href="https://github.com/AleStore-Official/AleStore" target="_blank">GitHub</a></p>
-      </section>
-
-      <section class="project">
-        <h2>AleDJ</h2>
-        <p><a href="https://alestore-official.github.io/AleDJ/" target="_blank">Visit AleDJ</a> • <a href="https://github.com/AleStore-Official/AleDJ" target="_blank">GitHub</a></p>
-      </section>
-    </main>
-
-    <footer>
-      <p>© 2025 AleStore • AGPL v3 License</p>
-      <p><a href="mailto:alestore.delegate549@passinbox.com">Contact</a> • <a href="https://github.com/AleStore-Official" target="_blank">GitHub Profile</a></p>
-    </footer>
+  <div class="project-box">
+    <h2>AleCrypt</h2>
+    <a href="https://alestore-official.github.io/AleCrypt/" target="_blank">Visit</a>
+    <a href="https://github.com/AleStore-Official/AleCrypt" target="_blank">GitHub</a>
   </div>
+
+  <div class="project-box">
+    <h2>AleCassier</h2>
+    <a href="https://alestore-official.github.io/AleCassier/" target="_blank">Visit</a>
+    <a href="https://github.com/AleStore-Official/AleCassier" target="_blank">GitHub</a>
+  </div>
+
+  <div class="project-box">
+    <h2>AlePortal</h2>
+    <a href="https://alestore-official.github.io/AlePortal/" target="_blank">Visit</a>
+    <a href="https://github.com/AleStore-Official/AlePortal" target="_blank">GitHub</a>
+  </div>
+
+  <div class="project-box">
+    <h2>AleStore</h2>
+    <a href="https://alestore-official.github.io/AleStore/" target="_blank">Visit</a>
+    <a href="https://github.com/AleStore-Official/AleStore" target="_blank">GitHub</a>
+  </div>
+
+  <div class="project-box">
+    <h2>AleDJ</h2>
+    <a href="https://alestore-official.github.io/AleDJ/" target="_blank">Visit</a>
+    <a href="https://github.com/AleStore-Official/AleDJ" target="_blank">GitHub</a>
+  </div>
+
+  <footer>
+    <p>© 2025 AleStore • AGPL v3 License</p>
+    <p><a href="mailto:alestore.delegate549@passinbox.com">Contact</a> • <a href="https://github.com/AleStore-Official" target="_blank">GitHub Profile</a></p>
+  </footer>
 </body>
 </html>
