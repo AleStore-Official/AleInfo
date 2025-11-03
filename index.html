@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AleInfo - AleStore Projects</title>
   <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <script>
     if ('serviceWorker' in navigator) {
@@ -71,15 +70,24 @@
     }
 
     footer {
+      margin-top: 50px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       text-align: center;
-      margin-top: 40px;
-      font-size: 14px;
-      color: #555;
+      color: #333;
+      font-size: 15px;
+      width: 90%;
+      max-width: 600px;
     }
 
     footer a {
       color: #007bff;
       text-decoration: none;
+      font-weight: 500;
     }
 
     footer a:hover {
@@ -133,8 +141,13 @@
   </div>
 
   <footer>
-    <p>© 2025 AleStore • AGPL v3 License</p>
-    <p><a href="mailto:alestore.delegate549@passinbox.com">Contact</a> • <a href="https://github.com/AleStore-Official" target="_blank">GitHub Profile</a></p>
+    <p><strong>© 2025 AleStore</strong> — Projects released under the 
+      <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank">AGPL v3 license</a>
+    </p>
+    <p>
+      <a href="mailto:alestore.delegate549@passinbox.com">📧 alestore.delegate549@passinbox.com</a> •
+      <a href="https://github.com/AleStore-Official" target="_blank">🌐 GitHub Profile</a>
+    </p>
   </footer>
 </body>
 </html>
