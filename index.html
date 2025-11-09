@@ -5,6 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AleStore Projects</title>
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E8GTDXF01V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-E8GTDXF01V', {
+      page_title: 'AleStore Projects',
+      page_path: '/projects'
+    });
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('a[target="_blank"]').forEach(link => {
+        link.addEventListener('click', () => {
+          gtag('event', 'external_link_click', {
+            event_category: 'Navigation',
+            event_label: link.href
+          });
+        });
+      });
+    });
+  </script>
+
   <link rel="manifest" href="manifest.json">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
