@@ -38,11 +38,6 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 30px;
-      position: relative;
-    }
-    .title-group {
-      display: flex;
-      flex-direction: column;
     }
     h1 {
       font-size: 28px;
@@ -52,51 +47,6 @@
     .welcome {
       font-size: 14px;
       color: #444;
-    }
-    .account-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: #007bff;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .dropdown {
-      position: absolute;
-      top: 60px;
-      right: 0;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      padding: 10px;
-      display: none;
-      flex-direction: column;
-      min-width: 180px;
-      z-index: 10;
-    }
-    .dropdown button {
-      background: none;
-      border: none;
-      padding: 10px;
-      text-align: left;
-      font-size: 14px;
-      cursor: pointer;
-    }
-    .dropdown button:hover {
-      background: #f0f0f0;
-    }
-    .logout {
-      color: white;
-      background: #dc3545;
-      border: none;
-      padding: 10px;
-      margin-top: 10px;
-      border-radius: 6px;
-      cursor: pointer;
     }
     main {
       width: 90%;
@@ -162,14 +112,9 @@
 <body>
 
   <header>
-    <div class="title-group">
+    <div>
       <h1>AleStore GitHub Projects</h1>
       <div class="welcome" id="welcome">Welcome</div>
-    </div>
-    <div class="account-icon" id="accountIcon">👤</div>
-    <div class="dropdown" id="accountMenu">
-      <button onclick="alert('Settings are stored locally.')">Browser Settings</button>
-      <button class="logout" onclick="logout()">Logout</button>
     </div>
   </header>
 
@@ -219,21 +164,6 @@
     );
 
     const welcome = document.getElementById("welcome");
-    const accountIcon = document.getElementById("accountIcon");
-    const accountMenu = document.getElementById("accountMenu");
-
-    accountIcon.addEventListener("click", () => {
-      accountMenu.style.display = accountMenu.style.display === "flex" ? "none" : "flex";
-    });
-
-    async function logout() {
-      await supabase.auth.signOut();
-      gtag('event', 'logout', {
-        event_category: 'User',
-        event_label: 'Manual logout'
-      });
-      location.href = "https://alestore-official.github.io/AleLogin";
-    }
 
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) {
