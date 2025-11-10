@@ -14,25 +14,12 @@
       page_title: 'AleStore Projects',
       page_path: '/projects'
     });
-    window.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('a[target="_blank"]').forEach(link => {
-        link.addEventListener('click', () => {
-          gtag('event', 'external_link_click', {
-            event_category: 'Navigation',
-            event_label: link.href
-          });
-        });
-      });
-    });
   </script>
 
   <link rel="manifest" href="manifest.json">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       padding: 40px 0;
@@ -44,71 +31,111 @@
       align-items: center;
       min-height: 100vh;
     }
-
-    header, footer {
-      text-align: center;
+    header {
+      width: 90%;
+      max-width: 800px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       margin-bottom: 30px;
+      position: relative;
     }
-
+    .title-group {
+      display: flex;
+      flex-direction: column;
+    }
     h1 {
-      font-size: 36px;
+      font-size: 28px;
       color: #111;
-      margin-bottom: 10px;
-      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+      margin: 0;
     }
-
-    p {
-      font-size: 16px;
+    .welcome {
+      font-size: 14px;
       color: #444;
     }
-
+    .account-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #007bff;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .dropdown {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 10px;
+      display: none;
+      flex-direction: column;
+      min-width: 180px;
+      z-index: 10;
+    }
+    .dropdown button {
+      background: none;
+      border: none;
+      padding: 10px;
+      text-align: left;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .dropdown button:hover {
+      background: #f0f0f0;
+    }
+    .logout {
+      color: white;
+      background: #dc3545;
+      border: none;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
     main {
       width: 90%;
       max-width: 800px;
     }
-
     .project {
       background: rgba(255, 255, 255, 0.15);
       border: 1px solid rgba(255, 255, 255, 0.3);
       border-radius: 20px;
       padding: 24px;
       margin-bottom: 24px;
-      box-shadow:
-        0 8px 32px rgba(0, 0, 0, 0.15),
-        inset 0 0 0.5px rgba(255, 255, 255, 0.4);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15),
+                  inset 0 0 0.5px rgba(255, 255, 255, 0.4);
       backdrop-filter: blur(20px) saturate(180%);
       -webkit-backdrop-filter: blur(20px) saturate(180%);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .project:hover {
       transform: translateY(-4px);
-      box-shadow:
-        0 12px 40px rgba(0, 0, 0, 0.2),
-        inset 0 0 1px rgba(255, 255, 255, 0.5);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2),
+                  inset 0 0 1px rgba(255, 255, 255, 0.5);
     }
-
     .project h2 {
       margin-bottom: 10px;
       color: #007bff;
       font-size: 22px;
     }
-
     .project p {
       margin: 6px 0;
       color: #333;
     }
-
     a {
       color: #007bff;
       text-decoration: none;
       font-weight: 500;
     }
-
     a:hover {
       text-decoration: underline;
     }
-
     footer {
       margin-top: 50px;
       padding: 24px;
@@ -121,28 +148,29 @@
       max-width: 800px;
       font-size: 14px;
       color: #333;
+      text-align: center;
     }
-
     footer a {
       color: #007bff;
       text-decoration: none;
     }
-
     footer a:hover {
       text-decoration: underline;
     }
   </style>
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js');
-    }
-  </script>
 </head>
 <body>
 
   <header>
-    <h1>AleStore GitHub Projects</h1>
-    <p>Welcome! Here you’ll find an overview of my open-source projects published on GitHub Pages.</p>
+    <div class="title-group">
+      <h1>AleStore GitHub Projects</h1>
+      <div class="welcome" id="welcome">Welcome</div>
+    </div>
+    <div class="account-icon" id="accountIcon">👤</div>
+    <div class="dropdown" id="accountMenu">
+      <button onclick="alert('Settings are stored locally.')">Browser Settings</button>
+      <button class="logout" onclick="logout()">Logout</button>
+    </div>
   </header>
 
   <main>
@@ -151,25 +179,21 @@
       <p><strong>Link:</strong> <a href="https://alestore-official.github.io/AleCrypt/" target="_blank">Visit AleCrypt</a></p>
       <p><strong>Repository:</strong> <a href="https://github.com/AleStore-Official/AleCrypt" target="_blank">GitHub</a></p>
     </section>
-
     <section class="project">
       <h2>AleCassier</h2>
       <p><strong>Link:</strong> <a href="https://alestore-official.github.io/AleCassier/" target="_blank">Visit AleCassier</a></p>
       <p><strong>Repository:</strong> <a href="https://github.com/AleStore-Official/AleCassier" target="_blank">GitHub</a></p>
     </section>
-
     <section class="project">
       <h2>AlePortal</h2>
       <p><strong>Link:</strong> <a href="https://alestore-official.github.io/AlePortal/" target="_blank">Visit AlePortal</a></p>
       <p><strong>Repository:</strong> <a href="https://github.com/AleStore-Official/AlePortal" target="_blank">GitHub</a></p>
     </section>
-
     <section class="project">
       <h2>AleStore</h2>
       <p><strong>Link:</strong> <a href="https://alestore-official.github.io/AleStore/" target="_blank">Visit AleStore</a></p>
       <p><strong>Repository:</strong> <a href="https://github.com/AleStore-Official/AleStore" target="_blank">GitHub</a></p>
     </section>
-
     <section class="project">
       <h2>AleDJ</h2>
       <p><strong>Link:</strong> <a href="https://alestore-official.github.io/AleDJ/" target="_blank">Visit AleDJ</a></p>
@@ -182,5 +206,46 @@
     <p>For inquiries: <a href="mailto:alestore.delegate549@passinbox.com">alestore.delegate549@passinbox.com</a></p>
     <p><a href="https://github.com/AleStore-Official" target="_blank">GitHub Profile</a></p>
   </footer>
+
+  <script type="module">
+    import { blockIfUnauthorized } from 'https://alestore-official.github.io/AleRegister/access.js';
+    import { createClient } from 'https://esm.sh/@supabase/supabase-js';
+
+    blockIfUnauthorized();
+
+    const supabase = createClient(
+      'https://hsyyrcbibohwvbuwxwok.supabase.co',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhzeXlyY2JpYm9od3ZidXd4d29rIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjEwNjE0MDcsImV4cCI6MjA3NjYzNzQwN30.2KsFsGYjwf_cA7Z9oglVthiaE1_jWYuQ6HMMm5UXsyo'
+    );
+
+    const welcome = document.getElementById("welcome");
+    const accountIcon = document.getElementById("accountIcon");
+    const accountMenu = document.getElementById("accountMenu");
+
+    accountIcon.addEventListener("click", () => {
+      accountMenu.style.display = accountMenu.style.display === "flex" ? "none" : "flex";
+    });
+
+    async function logout() {
+      await supabase.auth.signOut();
+      gtag('event', 'logout', {
+        event_category: 'User',
+        event_label: 'Manual logout'
+      });
+      location.href = "https://alestore-official.github.io/AleLogin";
+    }
+
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) {
+      location.href = "https://alestore-official.github.io/AleLogin";
+    } else {
+      const { data: profile } = await supabase
+        .from("utenti")
+        .select("firstName,lastName")
+        .eq("email", user.email)
+        .single();
+      welcome.textContent = `Welcome ${profile?.firstName || ''} ${profile?.lastName || ''}`;
+    }
+  </script>
 </body>
 </html>
