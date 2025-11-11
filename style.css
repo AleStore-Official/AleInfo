@@ -1,0 +1,119 @@
+:root {
+  --font-main: 'Inter', sans-serif;
+  --radius: 14px;
+  --transition: 0.3s ease;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  background: linear-gradient(270deg, #fbc2eb, #a6c1ee, #d4fc79);
+  background-size: 600% 600%;
+  animation: gradientFlow 60s ease infinite, fadeInBody 1s ease-in-out;
+  color: #222;
+  min-height: 100vh;
+  transition: background 0.4s, color 0.4s;
+}
+
+body.dark {
+  background: linear-gradient(270deg, #0f2027, #203a43, #2c5364);
+  color: #eee;
+}
+
+header {
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+header p {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.project {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15),
+              inset 0 0 0.5px rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.project:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2),
+              inset 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.project h2 {
+  margin-top: 0;
+  color: #007acc;
+}
+
+.project a {
+  color: #007acc;
+  text-decoration: none;
+}
+
+.project a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background: rgba(255,255,255,0.2);
+  border-radius: var(--radius);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+footer a {
+  color: #007acc;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeInBody {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
