@@ -2,19 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AleInfo</title>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E8GTDXF01V"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-E8GTDXF01V', {
-      page_title: 'AleInfo',
-      page_path: '/AleInfo'
-    });
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="manifest" href="manifest.json">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
@@ -27,7 +16,7 @@
     <p>Explore all AleStore projects in one place</p>
   </header>
 
-  <main>
+  <main id="infoSection" style="display:none;">
     <div class="card">
       <div class="emoji">🔐</div>
       <div class="info">
@@ -78,6 +67,19 @@
     <p>© 2025 AleStore • All projects released under AGPL v3 license</p>
     <p><a href="https://github.com/AleStore-Official" target="_blank">GitHub Profile</a></p>
   </footer>
+
+  <script type="module">
+    import { blockIfUnauthorized } from 'https://alestore-official.github.io/AleRegister/access.js';
+
+    const verified = localStorage.getItem("access_verified") === "true";
+    const registered = localStorage.getItem("user_verified") === "true";
+
+    if (!verified || !registered) {
+      blockIfUnauthorized();
+    } else {
+      document.getElementById("infoSection").style.display = "block";
+    }
+  </script>
 
   <script>
     if ("serviceWorker" in navigator) {
