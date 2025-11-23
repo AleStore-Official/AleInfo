@@ -23,42 +23,66 @@
 <body>
 
   <header>
-    <h1>AleStore GitHub Projects</h1>
+    <h1>🌐 AleStore Dashboard</h1>
+    <p>Explore all AleStore projects in one place</p>
   </header>
 
   <main>
-    <section class="project">
-      <h2>AleCrypt</h2>
-      <p><strong>Link:</strong> <a href="https://alestore-official.github.io/AleCrypt/" target="_blank">Visit AleCrypt</a></p>
-      <p><strong>Repository:</strong> <a href="https://github.com/AleStore-Official/AleCrypt" target="_blank">GitHub</a></p>
-    </section>
-    <section class="project">
-      <h2>AleCassier</h2>
-      <p><strong>Link:</strong> <a href="https://alestore-official.github.io/AleCassier/" target="_blank">Visit AleCassier</a></p>
-      <p><strong>Repository:</strong> <a href="https://github.com/AleStore-Official/AleCassier" target="_blank">GitHub</a></p>
-    </section>
-    <section class="project">
-      <h2>AlePortal</h2>
-      <p><strong>Link:</strong> <a href="https://alestore-official.github.io/AlePortal/" target="_blank">Visit AlePortal</a></p>
-      <p><strong>Repository:</strong> <a href="https://github.com/AleStore-Official/AlePortal" target="_blank">GitHub</a></p>
-    </section>
-    <section class="project">
-      <h2>AleStore</h2>
-      <p><strong>Link:</strong> <a href="https://alestore-official.github.io/AleStore/" target="_blank">Visit AleStore</a></p>
-      <p><strong>Repository:</strong> <a href="https://github.com/AleStore-Official/AleStore" target="_blank">GitHub</a></p>
-    </section>
-    <section class="project">
-      <h2>AleDJ</h2>
-      <p><strong>Link:</strong> <a href="https://alestore-official.github.io/AleDJ/" target="_blank">Visit AleDJ</a></p>
-      <p><strong>Repository:</strong> <a href="https://github.com/AleStore-Official/AleDJ" target="_blank">GitHub</a></p>
-    </section>
+    <div class="card">
+      <div class="emoji">🔐</div>
+      <div class="info">
+        <h2>AleCrypt</h2>
+        <p>Encrypt your messages securely.</p>
+      </div>
+      <a class="visit-btn" href="https://alestore-official.github.io/AleCrypt/" target="_blank">Visit</a>
+    </div>
+
+    <div class="card">
+      <div class="emoji">💳</div>
+      <div class="info">
+        <h2>AleCassier</h2>
+        <p>A simple cash register system.</p>
+      </div>
+      <a class="visit-btn" href="https://alestore-official.github.io/AleCassier/" target="_blank">Visit</a>
+    </div>
+
+    <div class="card">
+      <div class="emoji">🌀</div>
+      <div class="info">
+        <h2>AlePortal</h2>
+        <p>A portal with documents, apps, and games.</p>
+      </div>
+      <a class="visit-btn" href="https://alestore-official.github.io/AlePortal/" target="_blank">Visit</a>
+    </div>
+
+    <div class="card">
+      <div class="emoji">🛒</div>
+      <div class="info">
+        <h2>AleStore</h2>
+        <p>My store with purchasable games.</p>
+      </div>
+      <a class="visit-btn" href="https://alestore-official.github.io/AleStore/" target="_blank">Visit</a>
+    </div>
+
+    <div class="card">
+      <div class="emoji">🎵</div>
+      <div class="info">
+        <h2>AleDJ</h2>
+        <p>A music player with automix.</p>
+      </div>
+      <a class="visit-btn" href="https://alestore-official.github.io/AleDJ/" target="_blank">Visit</a>
+    </div>
   </main>
 
   <footer>
-    <p>© 2025 AleStore • All projects are released under the AGPL v3 license.</p>
-    <p>For inquiries: <a href="mailto:alestore.delegate549@passinbox.com">alestore.delegate549@passinbox.com</a></p>
+    <p>© 2025 AleStore • All projects released under AGPL v3 license</p>
     <p><a href="https://github.com/AleStore-Official" target="_blank">GitHub Profile</a></p>
   </footer>
 
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js");
+    }
+  </script>
 </body>
 </html>
